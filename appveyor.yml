@@ -11,4 +11,4 @@ build: false
 
 test_script:
   - sh -c "(env && pwd && cd -P . && ./configure)"
-  - make check-lite
+  - sh -c "make check-lite"
