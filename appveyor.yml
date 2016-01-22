@@ -1,8 +1,6 @@
 environment:
   matrix:
-  - BUILD: i686-pc-windows-gnu
   - BUILD: i686-pc-windows-msvc
-  - BUILD: x86_64-pc-windows-gnu
   - BUILD: x86_64-pc-windows-msvc
 install:
   - SET PATH=%PATH%;C:\MinGW\bin;C:\MinGW\msys\1.0\bin

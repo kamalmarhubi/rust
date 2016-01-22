@@ -1549,7 +1549,7 @@ do
     then
         msg "configuring LLVM for $t with cmake"
 
-        CMAKE_ARGS="-DLLVM_INCLUDE_TESTS=OFF"
+        CMAKE_ARGS="-DLLVM_INCLUDE_TESTS=OFF -DLLVM_TARGETS_TO_BUILD=X86"
         if [ -n "$CFG_DISABLE_OPTIMIZE_LLVM" ]; then
             CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_BUILD_TYPE=Debug"
         else
