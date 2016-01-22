@@ -1428,7 +1428,7 @@ then
     need_ok "git failed"
 
     msg "git: submodule foreach sync"
-    "${CFG_GIT}" submodule foreach --recursive 'if test -e .gitmodules; then git submodule sync; fi'
+    "${CFG_GIT}" submodule foreach --recursive 'if test -e .gitmodules; then git submodule sync; fi' </dev/zero
     need_ok "git failed"
 
     msg "git: submodule foreach update"
@@ -1441,9 +1441,9 @@ then
     "${CFG_GIT}" submodule status --recursive
 
     msg "git: submodule clobber"
-    "${CFG_GIT}" submodule foreach --recursive git clean -dxf
+    "${CFG_GIT}" submodule foreach --recursive git clean -dxf </dev/zero
     need_ok "git failed"
-    "${CFG_GIT}" submodule foreach --recursive git checkout .
+    "${CFG_GIT}" submodule foreach --recursive git checkout . </dev/zero
     need_ok "git failed"
 
     cd ${CFG_BUILD_DIR}
