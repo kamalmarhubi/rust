@@ -10,5 +10,6 @@ install:
 build: false
 
 test_script:
+  # maybe add patch workaround here for https://github.com/git-for-windows/git/issues/181
   - sh -c "(env && pwd && cd -P . && ./configure)"
   - sh -c "make check-lite"

@@ -1709,7 +1709,7 @@ do
         fi
 
         LLVM_FLAGS="$LLVM_TARGETS $LLVM_OPTS $LLVM_BUILD \
-                        $LLVM_HOST $LLVM_TARGET --with-python=$CFG_PYTHON"
+                        $LLVM_HOST $LLVM_TARGET --with-python=$CFG_PYTHON" </dev/zero
 
         msg "configuring LLVM with:"
         msg "$LLVM_FLAGS"
