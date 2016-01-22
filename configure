@@ -1709,7 +1709,7 @@ do
         fi
 
         LLVM_FLAGS="$LLVM_TARGETS $LLVM_OPTS $LLVM_BUILD \
-                        $LLVM_HOST $LLVM_TARGET --with-python=$CFG_PYTHON" </dev/zero
+                        $LLVM_HOST $LLVM_TARGET --with-python=$CFG_PYTHON"
 
         msg "configuring LLVM with:"
         msg "$LLVM_FLAGS"
@@ -1723,11 +1723,11 @@ do
         cd $LLVM_BUILD_DIR
         case $CFG_SRC_DIR in
             /* | [a-z]:* | [A-Z]:*)
-                ${CFG_LLVM_SRC_DIR}configure $LLVM_FLAGS
+                ${CFG_LLVM_SRC_DIR}configure $LLVM_FLAGS </dev/zero
                 ;;
             *)
                 ${CFG_BUILD_DIR}${CFG_LLVM_SRC_DIR}configure \
-                    $LLVM_FLAGS
+                    $LLVM_FLAGS </dev/zero
                 ;;
         esac
         need_ok "LLVM configure failed"
