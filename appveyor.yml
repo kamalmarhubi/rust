@@ -4,11 +4,13 @@ environment:
   - TARGET: i686-pc-windows-msvc
   - TARGET: x86_64-pc-windows-gnu
   - TARGET: x86_64-pc-windows-msvc
-#install:
-  #- SET PATH=%PATH%;C:\MinGW\bin
+install:
+  - SET PATH=%PATH%;C:\MinGW\bin;C:\MinGW\msys\1.0
 
 build: false
 
 test_script:
+  - sh -c "ls -l /c/MinGW/msys/1.0"
+  - sh -c "ls -l /c/MinGW/bin"
   - sh -c "(env && pwd && cd -P . && ./configure)"
   - make check-lite
