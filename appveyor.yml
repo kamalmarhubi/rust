@@ -1,6 +1,8 @@
 environment:
   matrix:
+  - BUILD: i686-pc-windows-gnu
   - BUILD: i686-pc-windows-msvc
+  - BUILD: x86_64-pc-windows-gnu
   - BUILD: x86_64-pc-windows-msvc
 install:
   - SET PATH=%PATH%;C:\MinGW\bin;C:\MinGW\msys\1.0\bin
@@ -10,4 +12,4 @@ build: false
 test_script:
   # maybe add patch workaround here for https://github.com/git-for-windows/git/issues/181
   - sh -c "(env && pwd && cd -P . && ./configure --build=$BUILD)"
-  - sh -c "make check-lite"
+  - sh -c "(make clean && make && make check-lite)"
