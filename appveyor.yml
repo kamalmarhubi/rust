@@ -10,4 +10,4 @@ build: false
 test_script:
   # maybe add patch workaround here for https://github.com/git-for-windows/git/issues/181
   - sh -c "(env && pwd && cd -P . && ./configure --build=$BUILD)"
-  - sh -c "(make clean && make && make check-lite)"
+  - sh -c "(make clean && make -j4 && make check-lite -j4)"
